@@ -13,4 +13,6 @@
 #
 
 class Ingredient < ApplicationRecord
+  has_many :formulations_ingredients, inverse_of: :ingredient, dependent: :delete_all
+  has_many :formulations, through: :formulations_ingredients
 end

@@ -9,4 +9,6 @@
 #
 
 class Formulation < ApplicationRecord
+  has_many :formulations_ingredients, inverse_of: :formulation, dependent: :delete_all
+  has_many :ingredients, through: :formulations_ingredients
 end

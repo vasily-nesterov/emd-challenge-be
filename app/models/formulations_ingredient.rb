@@ -10,4 +10,6 @@
 #
 
 class FormulationsIngredient < ApplicationRecord
+  belongs_to :formulation, inverse_of: :formulations_ingredients
+  belongs_to :ingredient,  inverse_of: :formulations_ingredients
 end

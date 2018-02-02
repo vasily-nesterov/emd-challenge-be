@@ -5,20 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Core
+gem 'rails',    '5.1.4'
+gem 'pg',       '0.20.0'
+gem 'puma',     '3.11.2'
 
-gem 'rails', '~> 5.1.4'
-gem 'pg',    '0.20.0'
-gem 'puma',  '~> 3.7'
+# JSON views
+gem 'jbuilder', '2.7.0'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+# Handle Cross-Origin Resource Sharing (CORS), making front-end app send AJAX requests to back-end
+gem 'rack-cors', '1.0.2'
 
 group :development, :test do
   gem 'byebug'

@@ -7,6 +7,7 @@
 #  ingredient_id  :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  percentage     :float            not null
 #
 
 class FormulationsIngredient < ApplicationRecord

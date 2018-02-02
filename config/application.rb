@@ -16,5 +16,18 @@ module EmdChallengeBe
   class Application < Rails::Application
     config.load_defaults 5.1
     config.api_only = true
+
+    # Allow CORS for front-end app
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        if Rails.env == 'production'
+          origins '*', 'emd-challenge.herokuapp.com'
+        else
+          origins '*', 'localhost:4200'
+        end
+
+        resource '*', headers: :any, methods: [:get, :post, :put, :delete, :options]
+      end
+    end
   end
 end

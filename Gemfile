@@ -30,3 +30,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :dev_tools do
+  gem 'annotate',  '>= 2.7.2'
+end

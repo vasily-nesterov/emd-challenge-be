@@ -8,6 +8,7 @@
 #  patient_birth_date :date             not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  formulation_id     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

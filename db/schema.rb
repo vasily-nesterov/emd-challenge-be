@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202151519) do
+ActiveRecord::Schema.define(version: 20180203125830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(version: 20180202151519) do
     t.float "maximum_percentage", null: false
     t.text "description"
     t.jsonb "classes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients_prescriptions", force: :cascade do |t|
+    t.integer "prescription_id", null: false
+    t.integer "ingredient_id", null: false
+    t.float "percentage", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prescription_id", "ingredient_id"], name: "index_prescriptions_ingredients_on_both_keys", unique: true
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.string "patient_name", null: false
+    t.string "patient_address", null: false
+    t.date "patient_birth_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

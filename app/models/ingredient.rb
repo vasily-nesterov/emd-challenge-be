@@ -15,4 +15,7 @@
 class Ingredient < ApplicationRecord
   has_many :formulations_ingredients, inverse_of: :ingredient, dependent: :delete_all
   has_many :formulations, through: :formulations_ingredients
+
+  has_many :ingredients_prescriptions, inverse_of: :ingredient, dependent: :delete_all
+  has_many :prescriptions, through: :ingredients_prescriptions
 end

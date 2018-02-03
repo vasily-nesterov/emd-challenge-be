@@ -15,7 +15,6 @@ Bundler.require(*Rails.groups)
 module EmdChallengeBe
   class Application < Rails::Application
     config.load_defaults 5.1
-    config.api_only = true
 
     # Allow CORS for front-end app
     config.middleware.insert_before 0, Rack::Cors do

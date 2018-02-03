@@ -1,0 +1,38 @@
+<h1>Prescription #<%= @prescription.id %> | <%= l(@prescription.created_at) %></h1>
+
+<hr>
+<h2>Patient</h2>
+<dl>
+  <dt>Name</dt>
+  <dd><b><%= @prescription.patient_name %></b></dd>
+
+  <dt>Address</dt>
+  <dd><b><%= @prescription.patient_address %></b></dd>
+
+  <dt>Date of Birth</dt>
+  <dd><b><%= l(@prescription.patient_birth_date) %></b></dd>
+</dl>
+
+<hr>
+<h2>Ingredients</h2>
+<dl>
+  <dt>Based on Formulation</dt>
+  <dd style="margin-bottom: 20px"><b><%= @prescription.formulation&.name || 'None' %></b></dd>
+
+  <% @prescription.ingredients_prescriptions.each_with_index do |ip, index| %>
+    <% ingredient = ip.ingredient %>
+
+    <dt>Ingredient #<%= index %></dt>
+    <dd>
+      <b>
+        <%= ip.percentage %>% of <%= ingredient.name %>
+
+        <% if ingredient.classes.present? %>
+          <small style="float: right;">
+            [<%= ingredient.classes.join(' | ') %>]
+          </small>
+        <% end %>
+      </b>
+    </dd>
+  <% end %>
+</dl>

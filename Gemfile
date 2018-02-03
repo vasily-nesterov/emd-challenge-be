@@ -16,6 +16,11 @@ gem 'jbuilder', '2.7.0'
 # Handle Cross-Origin Resource Sharing (CORS), making front-end app send AJAX requests to back-end
 gem 'rack-cors', '1.0.2'
 
+# PDF generation
+gem 'wicked_pdf',         '1.1.0'
+gem 'wkhtmltopdf-binary', '0.12.3.1'
+gem 'responders',         '2.4.0'
+
 group :development, :test do
   gem 'byebug'
 end

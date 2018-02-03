@@ -12,6 +12,8 @@
 #
 
 class Prescription < ApplicationRecord
+  belongs_to :formulation, optional: true
+
   has_many :ingredients_prescriptions, inverse_of: :prescription, dependent: :delete_all
   has_many :ingredients, through: :ingredients_prescriptions
 

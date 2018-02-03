@@ -13,4 +13,6 @@
 class IngredientsPrescription < ApplicationRecord
   belongs_to :ingredient,   inverse_of: :ingredients_prescriptions
   belongs_to :prescription, inverse_of: :ingredients_prescriptions
+
+  delegate :name, to: :ingredient, prefix: true
 end

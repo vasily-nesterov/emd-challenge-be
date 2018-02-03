@@ -5,7 +5,7 @@ module Api
         @prescription = Prescription.new(prescription_params)
 
         if @prescription.save
-          head :created
+          render :show
         else
           render json: {errors: @prescription.errors}, status: :unprocessable_entity
         end

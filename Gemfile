@@ -22,7 +22,10 @@ gem 'wkhtmltopdf-binary', '0.12.3.1'
 gem 'responders',         '2.4.0'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'byebug',      '>= 10.0.0'
+
+  gem 'rspec-rails',       '>= 3.7.2'
+  gem 'factory_bot_rails', '>= 4.8.2'
 end
 
 group :development do

@@ -22,7 +22,7 @@
   <% @prescription.ingredients_prescriptions.each_with_index do |ip, index| %>
     <% ingredient = ip.ingredient %>
 
-    <dt>Ingredient #<%= index %></dt>
+    <dt>Ingredient #<%= index + 1 %></dt>
     <dd>
       <b>
         <%= ip.percentage %>% of <%= ingredient.name %>

@@ -13,4 +13,8 @@
 class FormulationsIngredient < ApplicationRecord
   belongs_to :formulation, inverse_of: :formulations_ingredients
   belongs_to :ingredient,  inverse_of: :formulations_ingredients
+
+  validates :formulation, presence: true
+  validates :ingredient,  presence: true
+  validates :percentage,  presence: true, numericality: {greater_than: 0, less_than: 100}
 end
